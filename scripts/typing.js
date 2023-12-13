@@ -1,6 +1,8 @@
 const $text = document.querySelector("#typing_text")
 const speed = 100;
 let letter = ''
+console.log('')
+
 
 const typing = async () => {
     letter = "Christmas"
@@ -31,3 +33,5 @@ const remove = async () => {
 function wait(ms) {
     return new Promise(res => setTimeout(res, ms))
 }
+
+setTimeout(typing(), 1000)

@@ -1,24 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TOY_ChristmasWEB</title>
 </head>
+
 <body>
-    <script type="module" src="/scripts/typing.js" defer></script>
     <script type="module" src="/scripts/controller.js" defer></script>
-    <div id="container">
+    <div id="wrap">
         <nav>
             <ul id="nav_list">
-                <li id="home">Home</li>
-                <li id="scene1">Scene1</li>
-                <li id="scene2">Scene2</li>
-                <li id="scene3">Scene3</li>
+                <li class="home">Home</li>
+                <li class="scene1">Scene1</li>
+                <li class="scene2">Scene2</li>
+                <li class="scene3">Scene3</li>
             </ul>
         </nav>
-        <div id="main_text">We Wish a <br/>Merry <span id="typing_text"></span></div>
+        <div id="container">
+            <div id="App">
+                <!-- SPA 내용이 들어갈 자리 -->
+            </div>
+            <script type="module" src="App.js" defer></script>
+        </div>
     </div>
 </body>
+
 </html>
