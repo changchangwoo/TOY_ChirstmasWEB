@@ -33,6 +33,7 @@ window.addEventListener("click", (e) => {
   }
   if (e.target.classList.contains("scene3")) {
     changeUrl("/Scene3")
+    Scene3.snowing()
   }
 });
 

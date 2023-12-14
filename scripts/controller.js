@@ -4,7 +4,7 @@ const maintext = document.getElementById("main_text");
 
 navItems.forEach((item) => {
   item.addEventListener("click", function () {
-    console.log(container)
+    container.classList.remove("blur-animation");
     const imagePath = getNewImagePath(item.classList);
     changeImage(imagePath);
   });
@@ -23,5 +23,5 @@ function getNewImagePath(sceneId) {
 
 function changeImage(imagePath) {
   container.style.backgroundImage = `url('${imagePath}')`;
-  container.style.animation = "fadein 1s";
+  container.classList.add("blur-animation");
 }
