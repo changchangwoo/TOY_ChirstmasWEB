@@ -1,76 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
-    <style>
-        html {
-            width: 100%;
-            height: 100%;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes waveAnimation {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      25%, 75% {
+        transform: translateY(5px); /* 25%와 75% 지점에서 살짝 아래로 이동 */
+      }
+      50% {
+        transform: translateY(10px); /* 50% 지점에서 더 아래로 이동 */
+      }
+    }
 
-        body {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            justify-content: center;
-            text-align: center;
-            display: flex;
-        }
+    .wave-text {
+      display: inline-block;
+      font-size: 36px;
+      white-space: nowrap; /* 문자열이 한 줄로 나타나도록 설정 */
+      overflow: hidden; /* 넘치는 부분은 보이지 않도록 설정 */
+    }
 
-        #screen {
-            margin: auto;
-            width: 100%;
-            height: 100%;
-            background-color: grey;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        #animation_screen {
-            width: 5000px;
-            height: 5000px;
-        }
-
-        #circle {
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            background-color: black;
-            animation-name: sizeup;
-            animation-duration: 5s;
-            animation-iteration-count: infinite;
-        }
-
-        @keyframes sizeup {
-            from {
-                width: 50px;
-                height: 50px;
-            }
-
-            to {
-                width: 3500px;
-                /* 혹은 다른 크기로 설정 */
-                height: 3500px;
-                /* 혹은 다른 크기로 설정 */
-                /* 너비의 반값만큼 왼쪽으로 이동 */
-            }
-        }
-    </style>
+    .wave-char {
+      display: inline-block;
+      animation: waveAnimation 1s ease-in-out infinite; /* 애니메이션을 1초 동안 반복 재생 */
+    }
+  </style>
 </head>
-
 <body>
-    <div id="screen">
-        <div id="animation_screen">
-            <div id="circle" />
-        </div>
-    </div>
-</body>
 
+<div class="wave-text">
+  <span class="wave-char">H</span>
+  <span class="wave-char">e</span>
+  <span class="wave-char">l</span>
+  <span class="wave-char">l</span>
+  <span class="wave-char">o</span>
+</div>
+
+</body>
 </html>

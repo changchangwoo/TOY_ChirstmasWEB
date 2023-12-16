@@ -1,10 +1,8 @@
 const navItems = document.getElementById("nav_list").querySelectorAll("li");
 const container = document.getElementById("container");
 const maintext = document.getElementById("main_text");
-
 navItems.forEach((item) => {
   item.addEventListener("click", function () {
-    container.classList.remove("blur-animation");
     const imagePath = getNewImagePath(item.classList);
     changeImage(imagePath);
   });
@@ -22,6 +20,18 @@ function getNewImagePath(sceneId) {
 }
 
 function changeImage(imagePath) {
+
+  container.classList.add("blur_animation");
   container.style.backgroundImage = `url('${imagePath}')`;
-  container.classList.add("blur-animation");
+  setTimeout(()=>{container.classList.remove("blur_animation");}, 1000)
+
 }
+
+function initWeb() {
+  container.classList.add("blur_animation");
+  setTimeout(()=>{container.classList.remove("blur_animation");}, 2000)
+
+
+}
+
+initWeb()

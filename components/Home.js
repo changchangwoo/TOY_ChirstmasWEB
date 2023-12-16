@@ -8,8 +8,6 @@ class Home {
     const $text = document.querySelector("#typing_text");
     const speed = 100;
     let letter = "";
-    console.log("");
-
     const typing = async () => {
       letter = "Christmas";
       letter = [...letter];

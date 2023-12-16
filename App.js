@@ -30,6 +30,7 @@ window.addEventListener("click", (e) => {
   } 
   if (e.target.classList.contains("scene2")) {
     changeUrl("/Scene2")
+    Scene2.text_slide()
   }
   if (e.target.classList.contains("scene3")) {
     changeUrl("/Scene3")
