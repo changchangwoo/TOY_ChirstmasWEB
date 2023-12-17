@@ -51,7 +51,23 @@ body {
     background-image: url('/imgs/BG1.png');
     background-size: cover;
     background-position: center;
+}
 
+#container::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: #000;
+    animation: blink 10s ease-in-out 10s infinite;
+}
+
+@keyframes blink {
+    0% {opacity: 0.1;}
+    50% {opacity: 0.7;}
+    100% { opacity: 0.1;}
 }
 
 nav {
@@ -60,7 +76,9 @@ nav {
     display: flex;
     opacity: 0;
     transition: opacity 0.3s ease;
-    position: absolute
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
 }
 
 nav:hover {
@@ -80,6 +98,11 @@ nav>ul>li {
     font-weight: lighter;
     text-align: center;
     color: white;
+    transition: font-size 0.5s;
+}
+
+nav>ul>li:hover {
+    font-size: 23px;
 }
 
 nav>ul>li:not(:first-child) {
@@ -95,8 +118,7 @@ nav>ul>li:not(:first-child) {
     font-weight: bold;
     color: white;
     font-family: 'PlayfairDisplay';
-    opacity: 0;
-    animation: start_text 1.0s ease-out forwards
+    animation: start_text 1.0s ease-out forwards;
 }
 
 #nav_list {
@@ -146,10 +168,12 @@ footer:hover {
         transform: translateY(0px);
         font-size: 128px;
     }
+
     50% {
         transform: translateY(-70px);
         font-size: 128px;
-
+        color: rgb(120, 237, 120);
+        /* 초록색 */
     }
 
     100% {
@@ -160,6 +184,7 @@ footer:hover {
 
 .text-animated {
     animation: slide_text 2s ease-in-out forwards 2s;
+
 }
 
 #text_slide {
@@ -170,7 +195,30 @@ footer:hover {
     align-content: center;
 }
 
-#app span{
-    color: white;
-    font-size: 5rem;
+#app span:hover {
+    font-size: 6rem;
+}
+
+#text_split {
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+}
+
+#text_split>span {
+    transition: all 0.5s;
+    line-height: 20px;
+}
+
+#text_split>span:nth-child(odd):hover {
+    font-size: 160px;
+    color: rgb(120, 237, 120);
+    /* 초록색 */
+}
+
+#text_split>span:nth-child(even):hover {
+    font-size: 160px;
+    color: rgb(238, 104, 104);
+    /* 빨간색 */
 }

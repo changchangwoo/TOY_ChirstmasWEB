@@ -13,7 +13,7 @@ class Scene3 {
     const $canvasContainer = document.getElementById("canvas_container");
     const ctx = $canvas.getContext("2d");
 
-    const getRandomRadius = () => Math.random() * 1 + 0.5;
+    const getRandomRadius = () => Math.random() * 8 + 0.5;
     const getRandomSpeed = () => Math.random() * 0.3 + 0.1;
     const getRandomDir = () => [-1, 1][Math.floor(Math.random() * 2)];
 
@@ -30,7 +30,7 @@ class Scene3 {
 
       updateCanvasSize() {
         Snow.canvasWidth = $canvasContainer.clientWidth;
-        Snow.canvasHeight = $canvasContainer.clientHeight;
+        Snow.canvasHeight = $canvasContainer.clientHeight+200;
         $canvas.width = Snow.canvasWidth;
         $canvas.height = Snow.canvasHeight;
       },

@@ -27,6 +27,7 @@ window.addEventListener("click", (e) => {
   } 
   if (e.target.classList.contains("scene1")) {
     changeUrl("/Scene1");
+    Scene1.text_split()
   } 
   if (e.target.classList.contains("scene2")) {
     changeUrl("/Scene2")
